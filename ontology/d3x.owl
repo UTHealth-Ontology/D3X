@@ -14,7 +14,7 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://purl.obolibrary.org/obo/iao/2020-12-09/iao.owl</Import>
     <Import>https://raw.githubusercontent.com/UTHealth-Ontology/DEVO/main/devo.owl</Import>
-    <Import>https://raw.githubusercontent.com/UTHealth-Ontology/DEVO/main/imports/swo-license-terms.owl</Import>
+    <Import>https://raw.githubusercontent.com/UTHealth-Ontology/D3X/main/imports/swo-license-terms.owl</Import>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
         <Literal>Rebecca Lin
