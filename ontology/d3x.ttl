@@ -1,0 +1,1084 @@
+@prefix : <https://medicine.wustl.edu/ontology/ddx.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://medicine.wustl.edu/ontology/ddx.owl#> .
+
+<https://medicine.wustl.edu/ontology/ddx.owl#> rdf:type owl:Ontology ;
+                                                owl:imports <http://purl.obolibrary.org/obo/iao/2020-12-09/iao.owl> ,
+                                                            <https://raw.githubusercontent.com/UTHealth-Ontology/D3X/main/imports/swo-license-terms.owl> ,
+                                                            <https://raw.githubusercontent.com/UTHealth-Ontology/DEVO/main/devo.owl> ;
+                                                <http://purl.org/dc/terms/creator> """Rebecca Lin
+Cynthia Wang
+John Strickley
+Tuan Amith""" ;
+                                                <http://purl.org/dc/terms/title> "Dermoscopy Differential Diagnoses Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://schema.org/image
+<https://schema.org/image> rdf:type owl:AnnotationProperty ;
+                           rdfs:label "schema:image" .
+
+
+###  https://schema.org/logo
+<https://schema.org/logo> rdf:type owl:AnnotationProperty ;
+                          rdfs:label "schema:logo" ;
+                          rdfs:subPropertyOf <https://schema.org/image> .
+
+
+###  https://schema.org/photo
+<https://schema.org/photo> rdf:type owl:AnnotationProperty ;
+                           rdfs:label "schema:photo" ;
+                           rdfs:subPropertyOf <https://schema.org/image> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/RO_0002607
+<http://purl.obolibrary.org/obo/RO_0002607> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "is marker for" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sbmi.uth.edu/ontology/DEVO#Angulated_Lines
+<http://sbmi.uth.edu/ontology/DEVO#Angulated_Lines> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Lentigo_maligna
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Lentigo_maligna_melanoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Melanoma_on_sun_damaged_skin
+                                                                    ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Annular_Granular_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Annular_Granular_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                               owl:someValuesFrom :Facial_lentigo_maligna_melanoma
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                               owl:someValuesFrom :Lentigo_maligna
+                                                                             ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Asymmetric_Pigmented
+<http://sbmi.uth.edu/ontology/DEVO#Asymmetric_Pigmented> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                           owl:someValuesFrom :Lentigo_maligna
+                                                                         ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Atypical_Pigment_Network
+<http://sbmi.uth.edu/ontology/DEVO#Atypical_Pigment_Network> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                               owl:someValuesFrom :Dysplastic_nevus
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                               owl:someValuesFrom :Melanocytic_nevus
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                               owl:someValuesFrom :Melanoma
+                                                                             ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Blotch_Irregular
+<http://sbmi.uth.edu/ontology/DEVO#Blotch_Irregular> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Basal_cell_carcinoma
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Melanoma
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Seborrheic_keratosis
+                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Blotch_Regular
+<http://sbmi.uth.edu/ontology/DEVO#Blotch_Regular> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                     owl:someValuesFrom :Basal_cell_carcinoma
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                     owl:someValuesFrom :Dysplastic_nevus
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                     owl:someValuesFrom :Seborrheic_keratosis
+                                                                   ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Blue_Gray_Ovid_Nest
+<http://sbmi.uth.edu/ontology/DEVO#Blue_Gray_Ovid_Nest> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Basal_cell_carcinoma
+                                                                        ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Blue_Whitish_Veil
+<http://sbmi.uth.edu/ontology/DEVO#Blue_Whitish_Veil> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Angiokeratoma
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Basal_cell_carcinoma
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Congenital_melanocytic_nevus
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Dermatofibroma
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Melanoma
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Pyogenic_granuloma
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Reed_nevus
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Seborrheic_keratosis
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Spitz_nevus
+                                                                      ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Branched_Streaks
+<http://sbmi.uth.edu/ontology/DEVO#Branched_Streaks> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Melanocytic_nevus
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Melanoma
+                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Broadened_Network
+<http://sbmi.uth.edu/ontology/DEVO#Broadened_Network> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Melanoma
+                                                                      ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Central_White_Patch
+<http://sbmi.uth.edu/ontology/DEVO#Central_White_Patch> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Basal_cell_carcinoma
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Dermatofibroma
+                                                                        ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Cerebriform_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Cerebriform_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Seborrheic_keratosis
+                                                                        ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Cobblestones
+<http://sbmi.uth.edu/ontology/DEVO#Cobblestones> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                   owl:someValuesFrom :Congenital_melanocytic_nevus
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                   owl:someValuesFrom :Dermal_nevus
+                                                                 ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Comedo-like_Openings
+<http://sbmi.uth.edu/ontology/DEVO#Comedo-like_Openings> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                           owl:someValuesFrom :Seborrheic_keratosis
+                                                                         ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Crypts
+<http://sbmi.uth.edu/ontology/DEVO#Crypts> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                             owl:someValuesFrom :Seborrheic_keratosis
+                                                           ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Delicate_Network
+<http://sbmi.uth.edu/ontology/DEVO#Delicate_Network> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Dermatofibroma
+                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Dots_Irregular
+<http://sbmi.uth.edu/ontology/DEVO#Dots_Irregular> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                     owl:someValuesFrom :Basal_cell_carcinoma
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                     owl:someValuesFrom :Melanoma
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                     owl:someValuesFrom :Squamous_cell_carcinoma
+                                                                   ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Dots_Regular
+<http://sbmi.uth.edu/ontology/DEVO#Dots_Regular> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                   owl:someValuesFrom :Basal_cell_carcinoma
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                   owl:someValuesFrom :Melanocytic_nevus
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                   owl:someValuesFrom :Squamous_cell_carcinoma
+                                                                 ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Fibrillar_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Fibrillar_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Acral_nevus
+                                                                      ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Fingerprint_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Fingerprint_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Seborrheic_keratosis
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Solar_lentigo
+                                                                        ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Globules_Irregular
+<http://sbmi.uth.edu/ontology/DEVO#Globules_Irregular> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                         owl:someValuesFrom :Dysplastic_nevus
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                         owl:someValuesFrom :Melanoma
+                                                                       ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Globules_Regular
+<http://sbmi.uth.edu/ontology/DEVO#Globules_Regular> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Basal_cell_carcinoma
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Clonal_seborrheic_keratosis
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Dermatofibroma
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Melanocytic_nevus
+                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Latticelike_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Latticelike_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Acral_nevus
+                                                                        ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Leaflike_Areas
+<http://sbmi.uth.edu/ontology/DEVO#Leaflike_Areas> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                     owl:someValuesFrom :Basal_cell_carcinoma
+                                                                   ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Milky-Red_Areas
+<http://sbmi.uth.edu/ontology/DEVO#Milky-Red_Areas> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Basal_cell_carcinoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Dermatofibroma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Melanoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Pyogenic_granuloma
+                                                                    ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Moth-eaten_Border
+<http://sbmi.uth.edu/ontology/DEVO#Moth-eaten_Border> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Solar_lentigo
+                                                                      ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Negative_Network
+<http://sbmi.uth.edu/ontology/DEVO#Negative_Network> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Congenital_melanocytic_nevus
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Melanoma
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Spitz_nevus
+                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Parallel_Furrow_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Parallel_Furrow_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Acral_nevus
+                                                                            ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Parallel_Ridge_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Parallel_Ridge_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                             owl:someValuesFrom :Acral_melanoma
+                                                                           ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Peppering_Granularity
+<http://sbmi.uth.edu/ontology/DEVO#Peppering_Granularity> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                            owl:someValuesFrom :Lichen_planus-like_keratosis
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                            owl:someValuesFrom :Melanocytic_nevus
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                            owl:someValuesFrom :Melanoma
+                                                                          ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Pigment_Network
+<http://sbmi.uth.edu/ontology/DEVO#Pigment_Network> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Dermatofibroma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Dysplastic_nevus
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Ink_spot_lentigo
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Melanocytic_nevus
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Melanoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Solar_lentigo
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Supernumerary_nipple
+                                                                    ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Pseduopods
+<http://sbmi.uth.edu/ontology/DEVO#Pseduopods> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                 owl:someValuesFrom :Melanoma
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                 owl:someValuesFrom :Recurrent_nevus
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                 owl:someValuesFrom :Reed_nevus
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                 owl:someValuesFrom :Spitz_nevus
+                                                               ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Pseudonetwork
+<http://sbmi.uth.edu/ontology/DEVO#Pseudonetwork> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                    owl:someValuesFrom :Facial_nevus
+                                                                  ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Radial_Streaming
+<http://sbmi.uth.edu/ontology/DEVO#Radial_Streaming> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Melanoma
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Recurrent_nevus
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Reed_nevus
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Spitz_nevus
+                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Rainbow_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Rainbow_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Acral_pseudolymphomatous_angiokeratoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Actinic_keratosis
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Atypical_fibroxanthoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Basal_cell_carcinoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Blue_nevus
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Hemosiderotic_dermatofibroma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Kaposi_sarcoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Lichen_planus
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Melanoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Merkel_cell_carcinoma
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                      owl:someValuesFrom :Stasis_dermatitis
+                                                                    ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Rhomboids
+<http://sbmi.uth.edu/ontology/DEVO#Rhomboids> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                owl:someValuesFrom :Facial_melanoma
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                owl:someValuesFrom :Lentigo_maligna
+                                                              ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Rim_of_Brown_Globules
+<http://sbmi.uth.edu/ontology/DEVO#Rim_of_Brown_Globules> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                            owl:someValuesFrom :Dysplastic_nevus
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                            owl:someValuesFrom :Melanocytic_nevus
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                            owl:someValuesFrom :Melanoma
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                            owl:someValuesFrom :Spitz_nevus
+                                                                          ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Rosettes
+<http://sbmi.uth.edu/ontology/DEVO#Rosettes> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                               owl:someValuesFrom :Actinic_keratosis
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                               owl:someValuesFrom :Melanoma
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                               owl:someValuesFrom :Squamous_cell_carcinoma
+                                                             ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Scarlike_Depigmentation
+<http://sbmi.uth.edu/ontology/DEVO#Scarlike_Depigmentation> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Lichen_planus-like_keratosis
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Melanocytic_nevus
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Melanoma
+                                                                            ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Shiny_White_Blotches_and_Strands
+<http://sbmi.uth.edu/ontology/DEVO#Shiny_White_Blotches_and_Strands> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                                       owl:someValuesFrom :Basal_cell_carcinoma
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                                       owl:someValuesFrom :Lichen_planus-like_keratosis
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                                       owl:someValuesFrom :Melanoma
+                                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Shiny_White_Streaks
+<http://sbmi.uth.edu/ontology/DEVO#Shiny_White_Streaks> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Basal_cell_carcinoma
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Dermatofibroma
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Dysplastic_nevus
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Lichen_planus-like_keratosis
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Melanoma
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                          owl:someValuesFrom :Spitz_nevus
+                                                                        ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Spoke_Wheel_Area
+<http://sbmi.uth.edu/ontology/DEVO#Spoke_Wheel_Area> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                       owl:someValuesFrom :Basal_cell_carcinoma
+                                                                     ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Starburst_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Starburst_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Dysplastic_nevus_with_spitzoid_features
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Reed_nevus
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                        owl:someValuesFrom :Spitz_nevus
+                                                                      ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Strawberry_Pattern
+<http://sbmi.uth.edu/ontology/DEVO#Strawberry_Pattern> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                         owl:someValuesFrom :Actinic_keratosis
+                                                                       ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Typical_Pigment_Network
+<http://sbmi.uth.edu/ontology/DEVO#Typical_Pigment_Network> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Dermatofibroma
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Ink_spot_lentigo
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Melanocytic_nevus
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Solar_lentigo
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                              owl:someValuesFrom :Supernumerary_nipple
+                                                                            ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Milia-like_Cyst_(Cloudy)
+<http://sbmi.uth.edu/ontology/DEVO#Milia-like_Cyst_(Cloudy)> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                               owl:someValuesFrom :Seborrheic_keratosis
+                                                                             ] .
+
+
+###  http://sbmi.uth.edu/ontology/DEVO#Milia-like_Cyst_(Starry)
+<http://sbmi.uth.edu/ontology/DEVO#Milia-like_Cyst_(Starry)> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002607> ;
+                                                                               owl:someValuesFrom :Seborrheic_keratosis
+                                                                             ] .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Acral_melanoma
+:Acral_melanoma rdf:type owl:Class ;
+                rdfs:subClassOf :Melanoma ;
+                rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C4022" ,
+                             "http://purl.bioontology.org/ontology/MEDDRA/10000583" ,
+                             "http://purl.bioontology.org/ontology/SNOMEDCT/16974005" ;
+                <http://www.w3.org/2004/02/skos/core#altLabel> "Acral (lentiginous) melanoma" ,
+                                                               "Acral (lentiginous) melanoma, malignant" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Acral_nevus
+:Acral_nevus rdf:type owl:Class ;
+             rdfs:subClassOf :Melanocytic_nevus ;
+             rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54659" ,
+                          "http://purl.bioontology.org/ontology/SNOMEDCT/816201004" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Acral_pseudolymphomatous_angiokeratoma
+:Acral_pseudolymphomatous_angiokeratoma rdf:type owl:Class ;
+                                        rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                                        rdfs:seeAlso "http://purl.bioontology.org/ontology/MEDDRA/10078491" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Acral_pseudolymphomatous_angiokeratoma_of_children
+:Acral_pseudolymphomatous_angiokeratoma_of_children rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Acral_pseudolymphomatous_angiokeratoma ;
+                                                    rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/402842008" ;
+                                                    owl:deprecated "true"^^xsd:boolean ;
+                                                    <http://www.w3.org/2004/02/skos/core#altLabel> "APACHE" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Actinic_keratosis
+:Actinic_keratosis rdf:type owl:Class ;
+                   rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                   rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3148" ,
+                                "http://purl.bioontology.org/ontology/MEDDRA/10000614" ,
+                                "http://purl.bioontology.org/ontology/SNOMEDCT/201101007" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Angiokeratoma
+:Angiokeratoma rdf:type owl:Class ;
+               rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+               rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2874" ,
+                            "http://purl.bioontology.org/ontology/MEDDRA/10061639" ,
+                            "http://purl.bioontology.org/ontology/SNOMEDCT/26810009" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Atypical_fibroxanthoma
+:Atypical_fibroxanthoma rdf:type owl:Class ;
+                        rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                        rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C4246" ,
+                                     "http://purl.bioontology.org/ontology/MEDDRA/10064755" ,
+                                     "http://purl.obolibrary.org/obo/DERMO_0001154" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Basal_cell_carcinoma
+:Basal_cell_carcinoma rdf:type owl:Class ;
+                      rdfs:subClassOf :Dermascopy_Differential_Diagnosis ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/IAO_0000235> ;
+                                        owl:hasValue :test-image
+                                      ] ;
+                      rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C156767" ,
+                                   "http://purl.bioontology.org/ontology/MEDDRA/10007286" ,
+                                   "http://purl.bioontology.org/ontology/SNOMEDCT/1338007" ;
+                      <http://www.w3.org/2004/02/skos/core#altLabel> "Carcinoma basal cell" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Blue_nevus
+:Blue_nevus rdf:type owl:Class ;
+            rdfs:subClassOf :Melanocytic_nevus ;
+            rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3803" ,
+                         "http://purl.bioontology.org/ontology/MEDDRA/10062788" ,
+                         "http://purl.bioontology.org/ontology/SNOMEDCT/63166000" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Clonal_seborrheic_keratosis
+:Clonal_seborrheic_keratosis rdf:type owl:Class ;
+                             rdfs:subClassOf :Seborrheic_keratosis ;
+                             rdfs:seeAlso "http://purl.obolibrary.org/obo/DERMO_0000781" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Congenital_melanocytic_nevus
+:Congenital_melanocytic_nevus rdf:type owl:Class ;
+                              rdfs:subClassOf :Melanocytic_nevus ;
+                              rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3944" ,
+                                           "http://purl.bioontology.org/ontology/MEDDRA/10072037" ,
+                                           "http://purl.obolibrary.org/obo/DERMO_0000960" ;
+                              <http://www.w3.org/2004/02/skos/core#altLabel> "congenital nevus" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#DermNet_image
+:DermNet_image rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000101> ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://www.ebi.ac.uk/swo/has_license> ;
+                                 owl:someValuesFrom <http://www.ebi.ac.uk/swo/license/SWO_1000085>
+                               ] ;
+               owl:disjointWith :Placeholder_image .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Dermal_cellular_nevus
+:Dermal_cellular_nevus rdf:type owl:Class ;
+                       rdfs:subClassOf :Dermal_nevus ;
+                       rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/302838006" ;
+                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Dermal_nevus
+:Dermal_nevus rdf:type owl:Class ;
+              rdfs:subClassOf :Melanocytic_nevus ;
+              rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3804" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Dermascopy_Differential_Diagnosis
+:Dermascopy_Differential_Diagnosis rdf:type owl:Class .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Dermatofibroma
+:Dermatofibroma rdf:type owl:Class ;
+                rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                rdfs:seeAlso "http://purl.bioontology.org/ontology/MEDDRA/10012494" ,
+                             "http://purl.bioontology.org/ontology/SNOMEDCT/427186000" ,
+                             "http://purl.obolibrary.org/obo/DERMO_0001116" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Dermoscopedia_image
+:Dermoscopedia_image rdf:type owl:Class ;
+                     rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000101> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.ebi.ac.uk/swo/has_license> ;
+                                       owl:someValuesFrom <http://www.ebi.ac.uk/swo/license/SWO_1000085>
+                                     ] .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Dysplastic_nevus
+:Dysplastic_nevus rdf:type owl:Class ;
+                  rdfs:subClassOf :Melanocytic_nevus ;
+                  rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3694" ,
+                               "http://purl.bioontology.org/ontology/MEDDRA/10013961" ,
+                               "http://purl.bioontology.org/ontology/SNOMEDCT/61814002" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Dysplastic_nevus_with_spitzoid_features
+:Dysplastic_nevus_with_spitzoid_features rdf:type owl:Class ;
+                                         rdfs:subClassOf :Dysplastic_nevus .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Facial_actinic_keratosis
+:Facial_actinic_keratosis rdf:type owl:Class ;
+                          rdfs:subClassOf :Actinic_keratosis ;
+                          rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3148" ,
+                                       "http://purl.bioontology.org/ontology/MEDDRA/10000614" ,
+                                       "http://purl.bioontology.org/ontology/SNOMEDCT/201101007" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Facial_lentigo_maligna_melanoma
+:Facial_lentigo_maligna_melanoma rdf:type owl:Class ;
+                                 rdfs:subClassOf :Lentigo_maligna_melanoma .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Facial_melanoma
+:Facial_melanoma rdf:type owl:Class ;
+                 rdfs:subClassOf :Melanoma .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Facial_nevus
+:Facial_nevus rdf:type owl:Class ;
+              rdfs:subClassOf :Melanocytic_nevus .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Hemosiderotic_dermatofibroma
+:Hemosiderotic_dermatofibroma rdf:type owl:Class ;
+                              rdfs:subClassOf :Dermatofibroma .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Ink_spot_lentigo
+:Ink_spot_lentigo rdf:type owl:Class ;
+                  rdfs:subClassOf :Lentigo .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Kaposi_sarcoma
+:Kaposi_sarcoma rdf:type owl:Class ;
+                rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C9087" ,
+                             "http://purl.bioontology.org/ontology/LNC/LA26517-5" ,
+                             "http://purl.bioontology.org/ontology/SNOMEDCT/1179374007" ,
+                             "http://purl.obolibrary.org/obo/DERMO_0001041" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Lentigo
+:Lentigo rdf:type owl:Class ;
+         rdfs:subClassOf :Dermascopy_Differential_Diagnosis .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Lentigo_maligna
+:Lentigo_maligna rdf:type owl:Class ;
+                 rdfs:subClassOf :Lentigo ;
+                 rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43372" ,
+                              "http://purl.bioontology.org/ontology/MEDDRA/10024218" ,
+                              "http://purl.bioontology.org/ontology/SNOMEDCT/302836005" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Lentigo_maligna_melanoma
+:Lentigo_maligna_melanoma rdf:type owl:Class ;
+                          rdfs:subClassOf :Melanoma ;
+                          rdfs:seeAlso "http://purl.bioontology.org/ontology/MEDDRA/10024219" ,
+                                       "http://purl.bioontology.org/ontology/SNOMEDCT/302837001" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Lentingo_maligna
+:Lentingo_maligna rdf:type owl:Class ;
+                  rdfs:subClassOf :Melanoma .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Lichen_planus
+:Lichen_planus rdf:type owl:Class ;
+               rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+               rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3189" ,
+                            "http://purl.bioontology.org/ontology/MEDDRA/10024429" ,
+                            "http://purl.bioontology.org/ontology/SNOMEDCT/4776004" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Lichen_planus-like
+:Lichen_planus-like rdf:type owl:Class ;
+                    rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                    rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/263797007" ;
+                    owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Lichen_planus-like_keratosis
+:Lichen_planus-like_keratosis rdf:type owl:Class ;
+                              rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                              rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C165485" ,
+                                           "http://purl.bioontology.org/ontology/MEDDRA/10064007" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Melanocytic_nevus
+:Melanocytic_nevus rdf:type owl:Class ;
+                   rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                   rdfs:seeAlso "Nevus" ,
+                                "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C7570" ,
+                                "http://purl.bioontology.org/ontology/MEDDRA/10029384" ,
+                                "http://purl.bioontology.org/ontology/MEDDRA/10062797" ,
+                                "http://purl.bioontology.org/ontology/SNOMEDCT/400096001" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Melanoma
+:Melanoma rdf:type owl:Class ;
+          rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+          rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3224" ,
+                       "http://purl.bioontology.org/ontology/MEDDRA/10053571" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Melanoma_on_sun_damaged_skin
+:Melanoma_on_sun_damaged_skin rdf:type owl:Class ;
+                              rdfs:subClassOf :Melanoma .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Merkel_cell_carcinoma
+:Merkel_cell_carcinoma rdf:type owl:Class ;
+                       rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                       rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C9231" ,
+                                    "http://purl.bioontology.org/ontology/MEDDRA/10064025" ,
+                                    "http://purl.bioontology.org/ontology/SNOMEDCT/5052009" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#NCBI_Hosted_image
+:NCBI_Hosted_image rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000101> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.ebi.ac.uk/swo/has_license> ;
+                                     owl:someValuesFrom <http://www.ebi.ac.uk/swo/license/SWO_1000061>
+                                   ] .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Nipple_supernumerary
+:Nipple_supernumerary rdf:type owl:Class ;
+                      rdfs:subClassOf :Supernumerary_nipple ;
+                      rdfs:seeAlso "http://purl.bioontology.org/ontology/MEDDRA/10029422" ;
+                      owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Open_access_journal_image
+:Open_access_journal_image rdf:type owl:Class ;
+                           rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000101> .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Placeholder_image
+:Placeholder_image rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000101> .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Pyogenic_granuloma
+:Pyogenic_granuloma rdf:type owl:Class ;
+                    rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                    rdfs:seeAlso "http://purl.bioontology.org/ontology/MEDDRA/10037649" ,
+                                 "http://purl.bioontology.org/ontology/SNOMEDCT/200722003" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Recurrent_nevus
+:Recurrent_nevus rdf:type owl:Class ;
+                 rdfs:subClassOf :Melanocytic_nevus .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Reed_nevus
+:Reed_nevus rdf:type owl:Class ;
+            rdfs:subClassOf :Melanocytic_nevus .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Seborrheic_keratosis
+:Seborrheic_keratosis rdf:type owl:Class ;
+                      rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                      rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C9006" ,
+                                   "http://purl.bioontology.org/ontology/MEDDRA/10039791" ,
+                                   "http://purl.bioontology.org/ontology/SNOMEDCT/25499005" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Solar_lentigo
+:Solar_lentigo rdf:type owl:Class ;
+               rdfs:subClassOf :Lentigo ;
+               rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26881" ,
+                            "http://purl.bioontology.org/ontology/MEDDRA/10064127" ,
+                            "http://purl.bioontology.org/ontology/SNOMEDCT/72100002" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Spindle_cell_nevus_of_Reed
+:Spindle_cell_nevus_of_Reed rdf:type owl:Class ;
+                            rdfs:subClassOf :Reed_nevus ;
+                            rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/254812004" ;
+                            owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Spitz_nevus
+:Spitz_nevus rdf:type owl:Class ;
+             rdfs:subClassOf :Melanocytic_nevus ;
+             rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C27007" ,
+                          "http://purl.bioontology.org/ontology/MEDDRA/10062802" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Spitz_nevus_with_intraepidermal_pagetoid_spread
+:Spitz_nevus_with_intraepidermal_pagetoid_spread rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Spitz_nevus ;
+                                                 rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/402551005" ;
+                                                 owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Squamous_cell_carcinoma
+:Squamous_cell_carcinoma rdf:type owl:Class ;
+                         rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                         rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2929" ,
+                                      "http://purl.bioontology.org/ontology/MEDDRA/10041823" ,
+                                      "http://purl.bioontology.org/ontology/SNOMEDCT/1162767002" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Stasis_dermatitis
+:Stasis_dermatitis rdf:type owl:Class ;
+                   rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                   rdfs:seeAlso "http://purl.bioontology.org/ontology/MEDDRA/10041955" ,
+                                "http://purl.bioontology.org/ontology/SNOMEDCT/35498005" ,
+                                "http://purl.obolibrary.org/obo/DERMO_0000511" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#Supernumerary_nipple
+:Supernumerary_nipple rdf:type owl:Class ;
+                      rdfs:subClassOf :Dermascopy_Differential_Diagnosis ;
+                      rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/50956007" ;
+                      <http://www.w3.org/2004/02/skos/core#altLabel> "accessory nipple" .
+
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#single_spitz_nevus
+:single_spitz_nevus rdf:type owl:Class ;
+                    rdfs:subClassOf :Spitz_nevus ;
+                    rdfs:seeAlso "http://purl.obolibrary.org/obo/DERMO_0000951" ;
+                    owl:deprecated "true"^^xsd:boolean .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://medicine.wustl.edu/ontology/ddx.owl#test-image
+:test-image rdf:type owl:NamedIndividual ,
+                     <http://purl.obolibrary.org/obo/IAO_0000101> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

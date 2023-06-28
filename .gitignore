@@ -1,2 +1,6 @@
 
 .DS_Store
+ontology/catalog-v001.xml
+ontology/imported_data/catalog-v001.xml
+ddx_data_management/src/main/resources/config.properties
+ddx_data_management/target/

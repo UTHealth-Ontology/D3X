@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1671484416224" name="duplicate:https://medicine.wustl.edu/ontology/ddx.owl#" uri="testing_something.owl.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1671484416224" name="duplicate:https://medicine.wustl.edu/ontology/ddx.owl#" uri="something.owl.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1671484416224" name="duplicate:https://medicine.wustl.edu/ontology/ddx.owl#" uri="prelim_import.owl.owl"/>
+    </group>
+</catalog>
