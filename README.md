@@ -1,4 +1,4 @@
-# Dermoscopy Differential Diagnoses (D3X) Ontology
+# Dermoscopy Differential Diagnosis Explorer (D3X) Ontology
 
 ## Description
 
